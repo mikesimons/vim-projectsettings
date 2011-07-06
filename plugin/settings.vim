@@ -4,7 +4,11 @@ endif
 
 " per project vim settings loader
 function SetPerProjectSettings()
+  exe "so " . $VIM . "/vimrc"
+  exe "so " . $MYVIMRC
+
   let f = findfile(g:project_vimrc_file, '.;')
+
   if f != ""
     exe "so " . f
   endif
